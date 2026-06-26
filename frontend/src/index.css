@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+ 
+:root {
+  /* White background theme */
+  --bg:     #f8fafc;
+  --bg2:    #f1f5f9;
+  --bg3:    #e8f0fe;
+  --card:   #ffffff;
+  --card2:  #f8fafc;
+  --border: rgba(15,76,160,0.12);
+  --border2:rgba(15,76,160,0.28);
+ 
+  /* Brand colours — deep blue + teal on white */
+  --cyan:   #1a6fc4;
+  --cyan2:  #1557a0;
+  --teal:   #0d7377;
+  --green:  #166534;
+  --amber:  #92400e;
+  --red:    #991b1b;
+  --purple: #5b21b6;
+ 
+  /* Text */
+  --text:   #0f172a;
+  --text2:  #334155;
+  --text3:  #64748b;
+ 
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow:    0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.05);
+  --shadow-lg: 0 10px 36px rgba(0,0,0,.10), 0 4px 12px rgba(0,0,0,.06);
+}
+ 
+*{box-sizing:border-box;margin:0;padding:0;}
+ 
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+ 
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:var(--bg2);}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px;}
+ 
+.mono{font-family:'JetBrains Mono',monospace;}
+.serif{font-family:'Playfair Display',serif;}
+ 
+/* ── BADGES ─────────────────────────────────────────────────────────────── */
+.badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 10px;border-radius:999px;
+  font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+}
+.badge-cyan  {background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe;}
+.badge-green {background:#dcfce7;color:#166534;border:1px solid #bbf7d0;}
+.badge-amber {background:#fef3c7;color:#92400e;border:1px solid #fde68a;}
+.badge-red   {background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
+.badge-purple{background:#ede9fe;color:#5b21b6;border:1px solid #ddd6fe;}
+.badge-teal  {background:#ccfbf1;color:#0f766e;border:1px solid #99f6e4;}
+ 
+/* ── BUTTONS ─────────────────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 18px;border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
+  cursor:pointer;transition:all .18s;border:none;outline:none;
+  box-shadow:var(--shadow-sm);
+}
+.btn-primary{
+  background:linear-gradient(135deg,#1a6fc4,#0d7377);
+  color:#fff;
+}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:var(--shadow);}
+ 
+.btn-ghost{
+  background:#fff;
+  color:var(--text2);
+  border:1px solid #e2e8f0;
+}
+.btn-ghost:hover{background:var(--bg2);color:var(--text);border-color:#cbd5e1;}
+ 
+/* ── CARD ────────────────────────────────────────────────────────────────── */
+.card{
+  background:var(--card);
+  border:1px solid #e2e8f0;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:var(--shadow-sm);
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.card:hover{
+  border-color:#bfdbfe;
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-lg);
+}
+ 
+/* ── INPUT / SELECT ──────────────────────────────────────────────────────── */
+input,select{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  color:var(--text);
+  border-radius:8px;
+  font-family:'Inter',sans-serif;
+  font-size:14px;
+  padding:9px 13px;
+  outline:none;
+  transition:border-color .2s, box-shadow .2s;
+  width:100%;
+  box-shadow:var(--shadow-sm);
+}
+input:focus,select:focus{
+  border-color:#1a6fc4;
+  box-shadow:0 0 0 3px rgba(26,111,196,.12);
+}
+input::placeholder{color:#94a3b8;}
+ 
+/* ── DIVIDER ─────────────────────────────────────────────────────────────── */
+.divider{height:1px;background:#f1f5f9;margin:14px 0;}
+ 
+/* ── SPINNER ─────────────────────────────────────────────────────────────── */
+@keyframes spin{to{transform:rotate(360deg);}}
+.spinner{
+  width:32px;height:32px;
+  border:3px solid #e2e8f0;
+  border-top-color:#1a6fc4;
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+ 
+/* ── FADE UP ─────────────────────────────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp .35s ease both;}
